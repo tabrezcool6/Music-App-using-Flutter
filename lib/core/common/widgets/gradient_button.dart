@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:music_app/config/theme/app_pallete.dart';
+import 'package:music_app/configs/theme/app_pallete.dart';
+import 'package:music_app/core/common/styles.dart';
 
 class GradientButton extends StatelessWidget {
   final String text;
@@ -14,15 +15,8 @@ class GradientButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        gradient: const LinearGradient(
-          colors: [
-            AppPallete.gradient1,
-            AppPallete.gradient2,
-          ],
-          begin: Alignment.bottomLeft,
-          end: Alignment.topRight,
-        ),
-        borderRadius: BorderRadius.circular(7),
+        gradient: Styles.appGradientStyle,
+        borderRadius: BorderRadius.circular(36),
       ),
       child: ElevatedButton(
         onPressed: onTap,
