@@ -7,6 +7,11 @@ class AppTheme {
     brightness: Brightness.light,
     scaffoldBackgroundColor: AppPallete.lightBackground,
     fontFamily: 'Satoshi',
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: AppPallete.lightGrey,
+      selectionColor: AppPallete.lightGrey,
+      selectionHandleColor: AppPallete.lightGrey,
+    ),
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         textStyle: WidgetStateProperty.all(
@@ -29,7 +34,7 @@ class AppTheme {
         borderRadius: BorderRadius.circular(36.0),
       ),
       errorBorder: OutlineInputBorder(
-        borderSide: const BorderSide(width: 1.5, color: AppPallete.gradient2),
+        borderSide: const BorderSide(width: 1.5, color: AppPallete.red),
         borderRadius: BorderRadius.circular(36.0),
       ),
     ),

@@ -3,6 +3,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_app/configs/theme/app_theme.dart';
 import 'package:music_app/core/common/cubits/theme_cubit.dart';
 import 'package:music_app/core/common/pages/splash_page.dart';
+import 'package:music_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:music_app/init_dependencies.dart';
 
 void main() async {
@@ -22,6 +23,7 @@ class MyApp extends StatelessWidget {
     return MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => serviceLocator<ThemeCubit>()),
+        BlocProvider(create: (_) => serviceLocator<AuthBloc>()),
       ],
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
