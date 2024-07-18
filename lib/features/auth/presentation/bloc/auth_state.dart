@@ -8,8 +8,8 @@ final class AuthInitial extends AuthState {}
 final class AuthLoading extends AuthState {}
 
 final class AuthSuccess extends AuthState {
-  final String id;
-  AuthSuccess(this.id);
+  final UserEntity user;
+  AuthSuccess(this.user);
 }
 
 final class AuthFailure extends AuthState {

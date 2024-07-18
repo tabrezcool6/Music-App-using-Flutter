@@ -19,6 +19,8 @@ class AppTheme {
         ),
       ),
     ),
+    progressIndicatorTheme:
+        const ProgressIndicatorThemeData(color: AppPallete.gradient2),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.only(top: 18, bottom: 18, left: 28),
       border: OutlineInputBorder(
@@ -45,6 +47,11 @@ class AppTheme {
     brightness: Brightness.dark,
     scaffoldBackgroundColor: AppPallete.darkBackground,
     fontFamily: 'Satoshi',
+    textSelectionTheme: const TextSelectionThemeData(
+      cursorColor: AppPallete.lightGrey,
+      selectionColor: AppPallete.lightGrey,
+      selectionHandleColor: AppPallete.lightGrey,
+    ), 
     textButtonTheme: TextButtonThemeData(
       style: ButtonStyle(
         textStyle: WidgetStateProperty.all(
@@ -52,6 +59,8 @@ class AppTheme {
         ),
       ),
     ),
+    progressIndicatorTheme:
+        const ProgressIndicatorThemeData(color: AppPallete.gradient2),
     inputDecorationTheme: InputDecorationTheme(
       contentPadding: const EdgeInsets.only(top: 18, bottom: 18, left: 28),
       border: OutlineInputBorder(

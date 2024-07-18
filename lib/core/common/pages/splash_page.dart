@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:music_app/core/common/widgets/gradient_logo.dart';
-import 'package:music_app/features/auth/presentation/pages/login_page.dart';
 import 'package:music_app/core/common/pages/get_started_page.dart';
 
 class SplashPage extends StatefulWidget {
