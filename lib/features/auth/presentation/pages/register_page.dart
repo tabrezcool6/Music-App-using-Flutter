@@ -44,7 +44,11 @@ class _RegisterPageState extends State<RegisterPage> {
             Utils.showSnackBar(context, state.message);
           }
           if (state is AuthSuccess) {
-            Navigator.push(context, Homepage.route());
+            Navigator.pushAndRemoveUntil(
+              context,
+              Homepage.route(),
+              (route) => false,
+            );
           }
         },
         builder: (context, state) {

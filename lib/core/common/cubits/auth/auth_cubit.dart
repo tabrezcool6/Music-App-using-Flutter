@@ -4,7 +4,7 @@ import 'package:music_app/core/common/entities/user_entity.dart';
 
 part 'auth_state.dart';
 
-class AuthCubit extends Cubit<AuthState> {
+class AuthCubit extends Cubit<AuthCubitState> {
   AuthCubit() : super(AuthInitial());
 
   void updateUser(UserEntity? user) {

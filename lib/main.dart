@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:music_app/configs/theme/app_theme.dart';
-import 'package:music_app/core/common/cubits/auth/auth_cubit.dart' as cubit;
+import 'package:music_app/core/common/cubits/auth/auth_cubit.dart' ;
 import 'package:music_app/core/common/cubits/theme_cubit.dart';
 import 'package:music_app/core/common/pages/splash_page.dart';
 import 'package:music_app/features/auth/presentation/bloc/auth_bloc.dart';
@@ -17,7 +17,7 @@ void main() async {
     MultiBlocProvider(
       providers: [
         BlocProvider(create: (_) => serviceLocator<ThemeCubit>()),
-        BlocProvider(create: (_) => serviceLocator<cubit.AuthCubit>()),
+        BlocProvider(create: (_) => serviceLocator<AuthCubit>()),
         BlocProvider(create: (_) => serviceLocator<AuthBloc>()),
       ],
       child: const MyApp(),
@@ -49,9 +49,9 @@ class _MyAppState extends State<MyApp> {
           theme: AppTheme.lightTheme,
           darkTheme: AppTheme.darkTheme,
           themeMode: themeMode,
-          home: BlocSelector<cubit.AuthCubit, cubit.AuthState, bool>(
+          home: BlocSelector<AuthCubit, AuthCubitState, bool>(
             selector: (state) {
-              return state is cubit.AuthIsUserLoggedIn;
+              return state is AuthIsUserLoggedIn;
             },
             builder: (context, isLoggedIn) {
               if (isLoggedIn) {

@@ -7,6 +7,7 @@ import 'package:music_app/features/auth/data/repository/auth_repository_impl.dar
 import 'package:music_app/features/auth/domain/repository/auth_repository.dart';
 import 'package:music_app/features/auth/domain/usecases/current_user_usecase.dart';
 import 'package:music_app/features/auth/domain/usecases/login_user_usecase.dart';
+import 'package:music_app/features/auth/domain/usecases/logout_user_usecase.dart';
 import 'package:music_app/features/auth/domain/usecases/register_user_usecase.dart';
 import 'package:music_app/features/auth/presentation/bloc/auth_bloc.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
@@ -71,11 +72,19 @@ class InitDependencies {
     );
 
     ///
+    serviceLocator.registerFactory(
+      () => LogoutUserUsecase(
+        serviceLocator(),
+      ),
+    );
+
+    ///
     serviceLocator.registerLazySingleton(
       () => AuthBloc(
         registerUserUsecase: serviceLocator(),
         loginUserUsecase: serviceLocator(),
         getCurrentUserDataUsecase: serviceLocator(),
+        logoutUserUsecase: serviceLocator(),
         authCubit: serviceLocator(),
       ),
     );
